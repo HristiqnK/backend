@@ -1,14 +1,19 @@
 from pathlib import Path
 from datetime import timedelta
+from dotenv import load_dotenv
+
+import os
+
+load_dotenv()
 
 # Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--3nv4=ksjlp5yjv2os@k+3yh2)m(sdhx-+q7=f$9jv4lq(q7z9'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # Debugging mode (should be False in production)
-DEBUG = True
+DEBUG = False
 
 # Allowed hosts
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
@@ -77,12 +82,12 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database configuration
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangodb',
-        'USER': 'root',
-        'PASSWORD': 'Kostov111@',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'qureladb',
+        'USER': 'qurelauser',
+        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': ''
     }
 }
 
