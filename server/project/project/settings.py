@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database configuration
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangodb',
-        'USER': 'root',
-        'PASSWORD': 'Kostov111@',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'qureladb',
+        'USER': 'qurelauser',
+        'PASSWORD': 'qurelauser111@',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '5432',
     }
 }
 
